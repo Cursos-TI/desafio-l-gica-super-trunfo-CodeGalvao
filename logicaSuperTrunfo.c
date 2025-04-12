@@ -11,6 +11,7 @@ int main(){
     float area, pib, densidade, capita;
     float area_1, pib_1, densidade_1, capita_1;
     int pontosturisticos,pontosturisticos_1;
+    int escolha;
     float poder,poder_1;
 
     // Dado da Carta 1
@@ -98,19 +99,117 @@ int main(){
     printf("PIB per Capita: R$ %.2f\n", capita_1);
     printf("-------------------\n");
 
-    // Comparativo das Cartas (Atributo Selecionado)
-    
+    // Comparativo das Cartas 
+    printf("Comparativo de atributo (Escolha apenas 1)\n");
+    printf("1. População \n");
+    printf("2. Área \n");
+    printf("3. PIB \n");
+    printf("4. Pontos Turísticos \n");
+    printf("5. Densidade Populacional\n"); 
+    printf("6. PIB per Capita \n");
+    printf("7. Super Poder \n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
     printf("\n----- Hora Do Duelo! -----\n");
 
+    switch (escolha)
+    {
+    case 1:
     printf("Carta - 1 %s: %lu \n", nomecidade,populacao);
     printf("Carta - 2 %s: %lu \n", nomecidade_1,populacao_1);
 
-    if (populacao > populacao_1)
-    {
-        printf("A Carta 1 (%s) Venceu !",nomecidade);
-    }else{
-        printf("A Carta 2 (%s) Venceu !",nomecidade_1);
+    if (populacao > populacao_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (populacao < populacao_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
     }
+        break;
+
+    case 2:
+    printf("Carta - 1 %s: %.2f \n", nomecidade,area);
+    printf("Carta - 2 %s: %.2f \n", nomecidade_1,area_1);
     
+    if (area > area_1){
+        printf("A Carta 1 (%s) Venceu !\n",nomecidade);
+    }else if (area < area_1){
+        printf("A Carta 2 (%s) Venceu !\n",nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+        break;
+
+    case 3:
+    printf("Carta - 1 %s: %.2f \n", nomecidade, pib);
+    printf("Carta - 2 %s: %.2f \n", nomecidade_1, pib_1);
+    
+    if (pib > pib_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (pib < pib_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+    break;
+
+    case 4:
+    printf("Carta - 1 %s: %d \n", nomecidade, pontosturisticos);
+    printf("Carta - 2 %s: %d \n", nomecidade_1, pontosturisticos_1);
+    
+    if (pontosturisticos > pontosturisticos_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (pontosturisticos < pontosturisticos_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+    break;
+
+    case 5:
+    printf("Carta - 1 %s: %.2f \n", nomecidade, densidade);
+    printf("Carta - 2 %s: %.2f \n", nomecidade_1, densidade_1);
+    
+    if (densidade < densidade_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (densidade > densidade_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+    break;
+
+    case 6:
+    printf("Carta - 1 %s: %.2f \n", nomecidade, capita);
+    printf("Carta - 2 %s: %.2f \n", nomecidade_1, capita_1);
+    
+    if (capita > capita_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (capita < capita_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+    break;
+
+    case 7:
+    printf("Carta - 1 %s: %.2f \n", nomecidade, poder);
+    printf("Carta - 2 %s: %.2f \n", nomecidade_1, poder_1);
+    
+    if (poder > poder_1) {
+        printf("A Carta 1 (%s) Venceu !\n", nomecidade);
+    } else if (poder < poder_1) {
+        printf("A Carta 2 (%s) Venceu !\n", nomecidade_1);
+    } else {
+        printf("Empatou !\n");
+    }
+    break;
+
+    default:
+    printf("Opção inválida !\n");
+    break;
+    }
+
     return 0;
 }
